@@ -1,0 +1,119 @@
+{
+  "project_info": {
+    "project_number": "882033418489",
+    "firebase_url": "https://gangostesting.firebaseio.com",
+    "project_id": "gangostesting",
+    "storage_bucket": "gangostesting.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:882033418489:android:bfb7a91cad3a46e0ac8228",
+        "android_client_info": {
+          "package_name": "com.gangos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "882033418489-mcg04hn5eaqsbmu2rn3eo8r4f8nuugu4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRN12_tFT-1vKBmlyG3RHTr4fflyHY2jg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "882033418489-mcg04hn5eaqsbmu2rn3eo8r4f8nuugu4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "882033418489-7m7ria92a2cafd195jh6ktc98fuph8st.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ganzberg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:882033418489:android:4f46db37e82899faac8228",
+        "android_client_info": {
+          "package_name": "com.gangos.qa.kh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "882033418489-mcg04hn5eaqsbmu2rn3eo8r4f8nuugu4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRN12_tFT-1vKBmlyG3RHTr4fflyHY2jg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "882033418489-mcg04hn5eaqsbmu2rn3eo8r4f8nuugu4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "882033418489-7m7ria92a2cafd195jh6ktc98fuph8st.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ganzberg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:882033418489:android:843e0cb07241e118ac8228",
+        "android_client_info": {
+          "package_name": "com.ganzberg_store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "882033418489-mcg04hn5eaqsbmu2rn3eo8r4f8nuugu4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRN12_tFT-1vKBmlyG3RHTr4fflyHY2jg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "882033418489-mcg04hn5eaqsbmu2rn3eo8r4f8nuugu4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "882033418489-7m7ria92a2cafd195jh6ktc98fuph8st.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ganzberg"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

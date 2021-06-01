@@ -1,0 +1,339 @@
+{
+  "home" : "Home",
+  "@home": {
+    "description": "Home"
+  },
+  "category" : "Category",
+  "@category": {
+    "description": "Category"
+  },
+  "notification" : "Notification",
+  "@notification": {
+    "description": "notification"
+  },
+  "profile" : "Profile",
+  "@profile": {
+    "description": "profile"
+  },
+
+  "signIn" : "Sign In",
+  "@signIn": {
+    "description": "Sign In"
+  },
+  "signUp" : "Sign Up",
+  "@signUp": {
+    "description": "Sign Up"
+  },
+  "signOut" : "Sign Out",
+  "@signOut": {
+    "description": "Sign Out"
+  },
+
+  "phone" : "Phone",
+  "@phone": {
+    "description": "phone"
+  },
+  "password" : "Password",
+  "@password": {
+    "description": "Password"
+  },
+  "forgetPassword" : "Forget Password?",
+  "@forgetPassword": {
+    "description": "Forget Password?"
+  },
+  "enterAssociateAccount" : "Enter your phone number associated that your account",
+  "@enterAssociateAccount": {
+    "description": "Enter your phone number associated that your account"
+  },
+
+  "otpVerification" : "OTP Verification",
+  "@otpVerification": {
+    "description": "otp verification"
+  },
+  "optSendCode" : "We sent code to your number",
+  "@optSendCode": {
+    "description": "We sent code to your number"
+  },
+  "resendCodeinMinute" : "Resend code remaining in",
+  "@resendCodeinMinute": {
+    "description": "Resend code remaining in"
+  },
+  "resend" : "Resend",
+  "@resend": {
+    "description": "Resend"
+  },
+  "next" : "Next",
+  "@next": {
+    "description": "continue"
+  },
+
+  "dontHaveAnAccount" : "Don't have an account?",
+  "@dontHaveAnAccount": {
+    "description": "Don't have an account?"
+  },
+
+  "product" : "Product",
+  "@product": {
+    "description": "Products"
+  },
+  "newProduct": "New Products",
+  "@newProduct": {
+    "description": "New Products"
+  },
+  "popularProduct": "Popular Products",
+  "@popularProduct": {
+    "description": "Popular Product"
+  },
+  "recommendedCategory": "Recommended Category",
+  "@recommendedCategory": {
+    "description": "Recommended Category"
+  },
+
+  "allOrder": "All Orders",
+  "@allOrder": {
+    "description": "allOrder"
+  },
+  "order": "Order",
+  "@order": {
+    "description": "order"
+  },
+  "complete": "Completed",
+  "@complete": {
+    "description": "completed"
+  },
+  "delivery": "Delivery",
+  "@delivery": {
+    "description": "delivery"
+  },
+  "pending": "Pending",
+  "@pending": {
+    "description": "pending"
+  },
+  "processing": "Processing",
+  "@processing": {
+    "description": "pending"
+  },
+  "cancelled": "Cancelled",
+  "@cancelled": {
+    "description": "pending"
+  },
+
+  "total": "Total",
+  "@total": {
+    "description": "total"
+  },
+  "subTotal": "Subtotal",
+  "@subTotal": {
+    "description": "Subtotal"
+  },
+  "deliveryFee": "Delivery fee",
+  "@deliveryFee": {
+    "description": "Delivery fee"
+  },
+  "discount": "discount",
+  "@discount": {
+    "description": "discount"
+  },
+  "vat": "VAT",
+  "@vat": {
+    "description": "VAT"
+  },
+
+
+  "buy": "Place Order",
+  "@buy": {
+    "description": "Place Order"
+  },
+  "buyNow": "Place Order",
+  "@buyNow": {
+    "description": "Place Order"
+  },
+
+  "addInformation": "Add Information",
+  "@addInformation": {
+    "description": "add Information"
+  },
+  "addPayment": "Add Payments",
+  "@addPayment": {
+    "description": "Add Payments"
+  },
+  "orderSummery": "Order Summery",
+  "@orderSummery": {
+    "description": "Order Summery"
+  },
+  "item": "Items",
+  "@item": {
+    "description": "Items"
+  },
+
+  "language": "Language",
+  "@language": {
+    "description": "language"
+  },
+  "privacyPolicy": "Privacy Policy",
+  "@privacyPolicy": {
+    "description": "privacyPolicy"
+  },
+  "version": "Version",
+  "@version": {
+    "description": "version"
+  },
+
+  "addToCart": "Add to cart",
+  "@addToCart": {
+    "description": "Add to cart"
+  },
+  "myCart": "My Shopping Carts",
+  "@myCart": {
+    "description": "My Carts"
+  },
+
+  "search": "Search any ...",
+  "@search": {
+    "description": "Search any ..."
+  },
+  "viewAll": "View all",
+  "@viewAll": {
+    "description": "View all"
+  },
+
+  "createAccount": "Create Account",
+  "@createAccount": {
+    "description": "Create Account"
+  },
+  "name": "Name",
+  "@name": {
+    "description": "Create Account"
+  },
+  "cfPassword": "Confirm Password",
+  "@cfPassword": {
+    "description": "Confirm Password"
+  },
+  "signUpWith": "Or Sign up with",
+  "@signUpWith": {
+    "description": "Or Sign up with"
+  },
+  "signInWith": "Or Sign In with",
+  "@signInWith": {
+    "description": "Or Sign in with"
+  },
+
+  "loading": "Loading",
+  "@loading": {
+    "description": "Loading"
+  },
+
+  "myShop": "My Shop",
+  "@myShop": {
+    "description": "My Shop"
+  },
+
+  "emptyShoppingCart": "Your shopping card is empty",
+  "@emptyShoppingCart": {
+    "description": "Your shopping card is empty"
+  },
+
+
+  "setting": "Setting",
+  "@setting": {
+    "description": "setting"
+  },
+  "noData": "No Data",
+  "@noData": {
+    "description": "noData"
+  },
+  "orderConfirmation": "Order Confirmation",
+  "@orderConfirmation": {
+    "description": "Order Confirmation"
+  },
+  "code": "Code",
+  "@code": {
+    "description": "Code"
+  },
+  "apply": "Apply",
+  "@apply": {
+    "description": "apply"
+  },
+  "deliveryMethod": "Delivery Method",
+  "@deliveryMethod": {
+    "description": "Delivery Method"
+  },
+  "comingSoon": "Coming Soon",
+  "@comingSoon": {
+    "description": "Coming Soon"
+  },
+  "paymentMethod": "Payment Method",
+  "@paymentMethod": {
+    "description": "Payment Method"
+  },
+  "pickUpDate": "Pick Up Date",
+  "@pickUpDate": {
+    "description": "Pick Up Date"
+  },
+  "dateTime": "Date Time",
+  "@dateTime": {
+    "description": "Date Time"
+  },
+  "deliveryTo": "Delivery To",
+  "@deliveryTo": {
+    "description": "Delivery To"
+  },
+  "orderSuccessfully": "Order Successfully",
+  "@orderSuccessfully": {
+    "description": "Order Successfully"
+  },
+  "orderDetail": "Order Detail",
+  "@orderDetail": {
+    "description": "Order Detail"
+  },
+  "receivedOrder": "Received Orders",
+  "@receivedOrder": {
+    "description": "Order Successfully"
+  },
+  "newVersion": "New Version",
+  "@newVersion": {
+    "description": "New Version"
+  },
+  "initial": "Initial",
+  "@initial": {
+    "description": "Initial"
+  },
+  "updateNow": "Update Now",
+  "@updateNow": {
+    "description": "Update Now"
+  },
+  "noInternet": "No Internet Connection",
+  "@noInternet": {
+    "description": "No Internet"
+  },
+
+  "myOrder": "My Orders",
+  "@myOrder" : {
+    "description": "No Internet"
+  },
+
+  "qrCode" : "QR Code",
+  "@qrCode": {
+    "description": "QR Code"
+  },
+  "point" : "Point",
+  "@point": {
+    "description": "Point"
+  },
+  "seeAll" : "See All",
+  "@seeAll": {
+    "description": "See All"
+  },
+  "checkout" : "Checkout",
+  "@seeAll": {
+    "description": "Checkout"
+  },
+  "placeOrder" : "Place Order",
+  "@placeOrder" : {
+    "description" : "Place order"
+  },
+  "select" : "Select",
+  "@select" : {
+    "description" : "Select"
+  }
+}

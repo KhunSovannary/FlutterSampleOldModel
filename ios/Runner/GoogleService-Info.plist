@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>145187966800-rj81ep1i1sf00gtl5an98chggk8a8qfi.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.145187966800-rj81ep1i1sf00gtl5an98chggk8a8qfi</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAhpEwZtfJU-Bkd71k-_pBhCkm5JS3vvH8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>145187966800</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.medai.ganzberg</string>
+	<key>PROJECT_ID</key>
+	<string>gangos-cambodia</string>
+	<key>STORAGE_BUCKET</key>
+	<string>gangos-cambodia.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:145187966800:ios:9875b57ccbaa16f30fa655</string>
+	<key>DATABASE_URL</key>
+	<string>https://gangos-cambodia.firebaseio.com</string>
+</dict>
+</plist>
