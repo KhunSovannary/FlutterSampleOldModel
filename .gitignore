@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Miscellaneous
 *.class
 *.log
@@ -49,6 +50,8 @@ app.*.map.json
 =======
 =======
 >>>>>>> af543250bb241d574fdf22230979e193a64439aa
+=======
+>>>>>>> df5d60b8094010ef8d9b5bd4af4caa0ea296f9b5
 # These are some examples of commonly ignored file patterns.
 # You should customize this list as applicable to your project.
 # Learn more about .gitignore:
@@ -100,6 +103,9 @@ Thumbs.db
 *.wmv
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> bc9e71874e0d62ac5d7831d7031cc9ffeff7ec06
 =======
 >>>>>>> af543250bb241d574fdf22230979e193a64439aa
+=======
+>>>>>>> df5d60b8094010ef8d9b5bd4af4caa0ea296f9b5
