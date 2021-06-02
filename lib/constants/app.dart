@@ -45,6 +45,14 @@ class App {
 
   //city
   static const city = '/api/provinces';
+  //city
+  static const district = '/api/districts';
+  // membership
+  static const membership = '/api/membership';
+  // get shop supplier by district and member
+  static const getShopSupplier = '/api/shops/get-suppliers';
+  // openshop
+  static const openShop = '/api/shops/open-shop';
 
   static const iconsThem = IconThemeData(color: Colors.orange);
 
@@ -77,6 +85,19 @@ class App {
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(100))));
 
+  getSnackBarMessage({String message}) {
+    return SnackBar(
+        content: Text(
+          message,
+          textAlign: TextAlign.center,
+        ),
+        backgroundColor: Colors.black87,
+        margin: const EdgeInsets.only(bottom: 30, left: 40, right: 40),
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(100))));
+  }
+
   static Map<int, Color> bgStatusColor = {
     0: Colors.yellow.shade200,
     1: Colors.red.shade200,
@@ -100,7 +121,6 @@ class App {
     3: 'Completed',
     4: 'Cancelled'
   };
-
 
   Future<void> showLoading(BuildContext context) async {
     return showDialog<void>(
@@ -202,7 +222,7 @@ class App {
                 SizedBox(
                   height: 20,
                 ),
-                Center(child: Text(message)),
+                Center(child: Text(message, textAlign: TextAlign.center)),
                 SizedBox(
                   height: 10,
                 ),
@@ -219,7 +239,11 @@ class App {
     );
   }
 
-  Future<void> showUpdate({BuildContext context,String message, String appUrl, String title}) async {
+  Future<void> showUpdate(
+      {BuildContext context,
+      String message,
+      String appUrl,
+      String title}) async {
     return showDialog<void>(
       context: context,
       barrierDismissible: false, // user must tap button!
@@ -238,10 +262,55 @@ class App {
               child: Text(AppLocalizations.of(context).updateNow),
               onPressed: () async {
                 String url = appUrl;
-                await canLaunch(url) ? await launch(url) : throw 'Could not launch App';
+                await canLaunch(url)
+                    ? await launch(url)
+                    : throw 'Could not launch App';
               },
             ),
           ],
+        );
+      },
+    );
+  }
+
+  Future<void> internetLostConnection({BuildContext context}) async {
+    return showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          content: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 15),
+              child: ListBody(
+                children: <Widget>[
+                  Icon(
+                    Icons.wifi_off_rounded,
+                    color: Colors.redAccent,
+                    size: 70,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Center(
+                      child: Text(
+                    'Opps...',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 18),
+                  )),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Center(
+                      child: Text('No Internet Connection',
+                          textAlign: TextAlign.center)),
+                  SizedBox(
+                    height: 10,
+                  ),
+                ],
+              ),
+            ),
+          ),
         );
       },
     );

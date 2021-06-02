@@ -1,19 +1,19 @@
 class DistrictModel {
   DistrictModel({
     this.id,
-    this.defaultName,
+    this.name,
   });
 
   int id;
-  String defaultName;
+  String name;
 
   factory DistrictModel.fromJson(Map<String, dynamic> json) => DistrictModel(
     id: json["id"],
-    defaultName: json["default_name"],
+    name: json["default_name"],
   );
 
   Map<String, dynamic> toJson() => {
     "id": id,
-    "default_name": defaultName,
+    "default_name": name,
   };
 }

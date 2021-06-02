@@ -1,41 +1,41 @@
 {
   "project_info": {
-    "project_number": "145187966800",
-    "firebase_url": "https://gangos-cambodia.firebaseio.com",
-    "project_id": "gangos-cambodia",
-    "storage_bucket": "gangos-cambodia.appspot.com"
+    "project_number": "392589207642",
+    "firebase_url": "https://chabhuoy-69267.firebaseio.com",
+    "project_id": "chabhuoy-69267",
+    "storage_bucket": "chabhuoy-69267.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:145187966800:android:c63beab34d73fee9",
+        "mobilesdk_app_id": "1:392589207642:android:1b2780d4f359963d579063",
         "android_client_info": {
-          "package_name": "com.gangos"
+          "package_name": "com.chabhuoy"
         }
       },
       "oauth_client": [
         {
-          "client_id": "145187966800-12clmtf3nrr667hi5q9el59lvfs4t2v2.apps.googleusercontent.com",
+          "client_id": "392589207642-v68l9i6trn27nq8ra8ikcbv2enh4p8i7.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCCNvwK7SFUiD0y2BfPHUYOgknZFU6y53w"
+          "current_key": "AIzaSyBx9Exfz9PPr9HLmRCAiKwXkbhsXvcNiBk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "145187966800-12clmtf3nrr667hi5q9el59lvfs4t2v2.apps.googleusercontent.com",
+              "client_id": "392589207642-v68l9i6trn27nq8ra8ikcbv2enh4p8i7.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "145187966800-0ks5v71vj54tbi0johuts9jcjj19f77b.apps.googleusercontent.com",
+              "client_id": "392589207642-p90lcuh9redirpajte1goo9rve374b8a.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.ganzberg"
+                "bundle_id": "com.chabhuoy"
               }
             }
           ]

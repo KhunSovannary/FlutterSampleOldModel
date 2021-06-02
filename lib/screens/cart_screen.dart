@@ -10,7 +10,6 @@ import 'package:location/location.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-
 class CartScreen extends StatefulWidget {
   @override
   _CartScreenState createState() => _CartScreenState();
@@ -47,7 +46,8 @@ class _CartScreenState extends State<CartScreen> {
         iconTheme: IconThemeData(
           color: Colors.orange, //change your color here
         ),
-        title: Text(AppLocalizations.of(context).myCart, style: TextStyle(color: Colors.black)),
+        title: Text(AppLocalizations.of(context).myCart,
+            style: TextStyle(color: Colors.black)),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -63,12 +63,13 @@ class _CartScreenState extends State<CartScreen> {
                 context,
                 MaterialPageRoute(
                     builder: (context) => MapScreen(
-                      location: LocationModel(
-                          lat: location.latitude,
-                          lng: location.longitude,
-                          addressLine: location.getAddressLine,
-                          fullAddress: location.getFullAddress),
-                    )),
+                          popUpBack: false,
+                          location: LocationModel(
+                              lat: location.latitude,
+                              lng: location.longitude,
+                              addressLine: location.getAddressLine,
+                              fullAddress: location.getFullAddress),
+                        )),
               );
             }),
       ),

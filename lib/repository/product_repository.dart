@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
@@ -10,6 +11,8 @@ import 'package:flutter_chabhuoy/models/query_product_model.dart';
 import 'package:http/http.dart' as http;
 
 class ProductRepository with ChangeNotifier {
+  final App myApp = App();
+
   List<ProductModel> products = [];
   List<QueryModel> filterProduct = [];
   int pageProduct = 1;
@@ -26,69 +29,77 @@ class ProductRepository with ChangeNotifier {
     return products.length;
   }
 
-  Future<ProductDetailModel> getProductDetail({int productId}) async {
-    final response = await http
-        .get(Uri.https(App.apiBaseUrl, '${App.productDetail}/$productId'));
+  Future<ProductDetailModel> getProductDetail(
+      {BuildContext context, int productId}) async {
+    try {
+      final response = await http
+          .get(Uri.https(App.apiBaseUrl, '${App.productDetail}/$productId'));
 
-    if (response.statusCode == 200) {
-      return ProductDetailModel.fromJson(jsonDecode(response.body)['data']);
-    } else {
-      throw Exception('Failed to load album');
+      if (response.statusCode == 200) {
+        return ProductDetailModel.fromJson(jsonDecode(response.body)['data']);
+      }
+    } on SocketException catch (_) {
+      throw 'No Internet Connection';
     }
   }
 
-  Future<void> getProducts({Locale locale, int page}) async {
-    // print(products.length);
-    // pageProduct = (products.length ~/ 10).toInt();
-    if (products.length >= 10) {
-      ++pageProduct;
-    }
+  Future<void> getProducts(
+      {BuildContext context, Locale locale, int page}) async {
+    try {
+      if (products.length >= 10) {
+        ++pageProduct;
+      }
 
+      var queryParam = {
+        "id": "093216",
+        "token": "GanGosFutureToken2020",
+        // "page": page != null ? pageProduct.toString() : 1.toString()
+        "page": pageProduct.toString()
+      };
+
+      print(pageProduct);
+
+      List<ProductModel> _listProduct = [];
+      final response = await http.get(
+        Uri.https(App.apiBaseUrl, App.publicProduct, queryParam),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+          'Content-language': locale.toString()
+        },
+      );
+
+      if (response.statusCode == 200) {
+        _listProduct = List<ProductModel>.from(jsonDecode(response.body)['data']
+                ['products']
+            .map((x) => ProductModel.fromJson(x)));
+        if (page == null) {
+          products = _listProduct;
+        } else {
+          products.addAll(_listProduct);
+        }
+        notifyListeners();
+      }
+    } on SocketException catch (e) {
+      // print('error message : $e');
+      myApp.internetLostConnection(context: context);
+      // throw Exception('No Internet.');
+    }
+  }
+
+  Future<List<ProductModel>> getPublicProduct({int page}) async {
     var queryParam = {
       "id": "093216",
       "token": "GanGosFutureToken2020",
-      // "page": page != null ? pageProduct.toString() : 1.toString()
-      "page": pageProduct.toString()
+      "page": page.toString()
     };
-
-    List<ProductModel> _listProduct = [];
-    final response = await http
-        .get(Uri.https(
-        App.apiBaseUrl,
-        App.publicProduct, queryParam),
-        headers: <String, String>{
-          'Content-Type': 'application/json; charset=UTF-8',
-          'Content-language' : locale.toString()
-        },);
-
-    if (response.statusCode == 200) {
-      _listProduct = List<ProductModel>.from(jsonDecode(response.body)['data']
-              ['products']
-          .map((x) => ProductModel.fromJson(x)));
-      if (page == null) {
-        products = _listProduct;
-      } else {
-        products.addAll(_listProduct);
-      }
-      notifyListeners();
-    }
-  }
-
-  Future<List<ProductModel>> getPublicProduct() async {
-    var queryParam = {"id": "093216", "token": "GanGosFutureToken2020"};
-
     final response = await http
         .get(Uri.https(App.apiBaseUrl, App.publicProduct, queryParam));
 
     if (response.statusCode == 200) {
-      // If the server did return a 200 OK response,
-      // then parse the JSON.
       return List<ProductModel>.from(jsonDecode(response.body)['data']
               ['products']
           .map((x) => ProductModel.fromJson(x)));
     } else {
-      // If the server did not return a 200 OK response,
-      // then throw an exception.
       throw Exception('Failed to load album');
     }
   }

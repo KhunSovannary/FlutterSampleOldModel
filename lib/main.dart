@@ -4,6 +4,7 @@ import 'package:flutter_chabhuoy/repository/cart_repository.dart';
 import 'package:flutter_chabhuoy/repository/checkout_repository.dart';
 import 'package:flutter_chabhuoy/repository/home_repository.dart';
 import 'package:flutter_chabhuoy/repository/my_shop_order_repository.dart';
+import 'package:flutter_chabhuoy/repository/open_shop_repository.dart';
 import 'package:flutter_chabhuoy/repository/order_repository.dart';
 import 'package:flutter_chabhuoy/repository/payment_method_repository.dart';
 import 'package:flutter_chabhuoy/repository/product_repository.dart';
@@ -45,32 +46,33 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider.value(value: CategoryRepository()),
         ChangeNotifierProvider.value(value: LocationService()),
         ChangeNotifierProvider.value(value: LocalizationService()),
+        ChangeNotifierProvider.value(value: OpenShopRepository()),
       ],
       child: ChangeNotifierProvider(
-        create: (context) => LocalizationService(),
-        builder: (context, child) {
-          final localizationService = Provider.of<LocalizationService>(context);
+          create: (context) => LocalizationService(),
+          builder: (context, child) {
+            final localizationService =
+                Provider.of<LocalizationService>(context);
 
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            localizationsDelegates: [
-              AppLocalizations.delegate, // Add this line
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
-            locale: localizationService.locale,
-            supportedLocales: L10n.all,
-            initialRoute: '/',
-            routes: {
-              // When navigating to the "/" route, build the FirstScreen widget.
-              '/': (context) => SplashScreen(),
-              // When navigating to the "/second" route, build the SecondScreen widget.
-              '/product-detail': (context) => ProductDetailScreen(),
-            },
-          );
-        }
-      ),
+            return MaterialApp(
+              debugShowCheckedModeBanner: false,
+              localizationsDelegates: [
+                AppLocalizations.delegate, // Add this line
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              locale: localizationService.locale,
+              supportedLocales: L10n.all,
+              initialRoute: '/',
+              routes: {
+                // When navigating to the "/" route, build the FirstScreen widget.
+                '/': (context) => SplashScreen(),
+                // When navigating to the "/second" route, build the SecondScreen widget.
+                '/product-detail': (context) => ProductDetailScreen(),
+              },
+            );
+          }),
     );
   }
 }

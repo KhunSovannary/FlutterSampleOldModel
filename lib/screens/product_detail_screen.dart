@@ -7,6 +7,7 @@ import 'package:flutter_chabhuoy/models/product_model.dart';
 import 'package:flutter_chabhuoy/repository/cart_repository.dart';
 import 'package:flutter_chabhuoy/repository/product_repository.dart';
 import 'package:flutter_chabhuoy/widgets/add_to_cart_widget.dart';
+import 'package:flutter_chabhuoy/widgets/lost_internet_connection.dart';
 import 'package:flutter_chabhuoy/widgets/product_card.dart';
 import 'package:flutter_chabhuoy/widgets/product_grid_widget.dart';
 import 'package:flutter_chabhuoy/widgets/product_image_detail.dart';
@@ -14,7 +15,6 @@ import 'package:flutter_chabhuoy/widgets/product_option_widget.dart';
 import 'package:flutter_chabhuoy/widgets/shop_widget.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
 
 class ProductDetailScreen extends StatefulWidget {
   ProductDetailScreen({@required this.product});
@@ -144,7 +144,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                                                                                 .values[
                                                                                     index]
                                                                                 .id
-                                                                        ? AppTheme.primaryColor
+                                                                        ? AppTheme
+                                                                            .primaryColor
                                                                         : Colors
                                                                             .grey
                                                                             .shade300
@@ -346,7 +347,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
           }
 
           if (snapshot.hasError) {
-            return Text('No Internet Connection');
+            return LostInternetConnection(message: snapshot.error);
           }
 
           return Center(child: CircularProgressIndicator());

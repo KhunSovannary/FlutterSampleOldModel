@@ -5,6 +5,7 @@ import 'package:flutter_chabhuoy/repository/product_repository.dart';
 import 'package:flutter_chabhuoy/screens/product_detail_screen.dart';
 import 'package:flutter_chabhuoy/screens/search_screen.dart';
 import 'package:flutter_chabhuoy/services/localization_service.dart';
+import 'package:flutter_chabhuoy/widgets/loading_widget.dart';
 import 'package:flutter_chabhuoy/widgets/product_card.dart';
 import 'package:flutter_chabhuoy/widgets/product_grid_widget.dart';
 import 'package:provider/provider.dart';
@@ -18,11 +19,23 @@ class ProductScreen extends StatefulWidget {
 class _ProductScreenState extends State<ProductScreen> {
   final controller = ScrollController();
   int productPage = 1;
+  bool loading = false;
+  List<ProductModel> productLists = [];
+
+  final ProductRepository productRepo = ProductRepository();
 
   @override
   void initState() {
     super.initState();
     // Setup the listener.
+    SchedulerBinding.instance.addPostFrameCallback((_) {
+      productRepo.getPublicProduct(page: 1).then((products) => {
+            setState(() {
+              ++productPage;
+              productLists = products;
+            })
+          });
+    });
     controller.addListener(listenScrolling);
   }
 
@@ -42,10 +55,15 @@ class _ProductScreenState extends State<ProductScreen> {
       } else {
         SchedulerBinding.instance.addPostFrameCallback((_) {
           setState(() {
-            productPage++;
+            loading = true;
           });
-          Provider.of<ProductRepository>(context, listen: false)
-              .getProducts(page: productPage);
+          productRepo.getPublicProduct(page: productPage).then((products) => {
+                setState(() {
+                  productLists.addAll(products);
+                  ++productPage;
+                  loading = false;
+                })
+              });
         });
       }
     }
@@ -57,7 +75,8 @@ class _ProductScreenState extends State<ProductScreen> {
     final products = Provider.of<ProductRepository>(context);
     if (products.getLengthProduct == 0) {
       SchedulerBinding.instance.addPostFrameCallback((_) {
-        products.getProducts(locale: localizationService.locale);
+        products.getProducts(
+            context: context, locale: localizationService.locale);
       });
     }
 
@@ -102,29 +121,31 @@ class _ProductScreenState extends State<ProductScreen> {
             ),
           ),
         ),
-        body: GridView.count(
-            childAspectRatio: (itemWidth / itemHeight),
-            primary: false,
-            controller: controller,
-            scrollDirection: Axis.vertical,
-            shrinkWrap: true,
-            padding: const EdgeInsets.all(10),
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            crossAxisCount: 2,
-            children: products.getListProducts
-                .map<Widget>((product) => InkWell(
-                      splashColor: Colors.green.shade200,
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  ProductDetailScreen(product: product)),
-                        );
-                      },
-                      child: ProductCard(product: product),
-                    ))
-                .toList()));
+        body: productLists.length <= 0
+            ? Center(child: Loading())
+            : GridView.count(
+                childAspectRatio: (itemWidth / itemHeight),
+                primary: false,
+                controller: controller,
+                scrollDirection: Axis.vertical,
+                shrinkWrap: true,
+                padding: const EdgeInsets.all(10),
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                crossAxisCount: 2,
+                children: productLists
+                    .map<Widget>((product) => InkWell(
+                          splashColor: Colors.green.shade200,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      ProductDetailScreen(product: product)),
+                            );
+                          },
+                          child: ProductCard(product: product),
+                        ))
+                    .toList()));
   }
 }

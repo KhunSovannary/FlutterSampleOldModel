@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 
 class TextFieldWidget extends StatelessWidget {
-
-  TextFieldWidget({
-    @required this.hintText,
-    @required this.controller,
-    @required this.readOnly,
-    @required this.hintTextStyle,
-    @required this.onTap
-  });
+  TextFieldWidget(
+      {@required this.hintText,
+      @required this.controller,
+      @required this.readOnly,
+      @required this.hintTextStyle,
+      @required this.onTap});
 
   final String hintText;
   final TextEditingController controller;
@@ -18,7 +16,7 @@ class TextFieldWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
       onTap: onTap,
       readOnly: readOnly ?? false,
       controller: controller,
@@ -29,11 +27,11 @@ class TextFieldWidget extends StatelessWidget {
           border: new OutlineInputBorder(
               borderSide: new BorderSide(color: Colors.grey.shade300)),
           hintText: hintText ?? '',
-          contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 15),
-          hintStyle: hintTextStyle == null ? TextStyle(
-              fontSize: 14,
-              color: Colors.black87) : hintTextStyle
-      ),
+          contentPadding:
+              const EdgeInsets.symmetric(vertical: 12, horizontal: 15),
+          hintStyle: hintTextStyle == null
+              ? TextStyle(fontSize: 14, color: Colors.black87)
+              : hintTextStyle),
     );
   }
 }

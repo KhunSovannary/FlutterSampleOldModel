@@ -33,15 +33,16 @@ class _SplashScreenState extends State<SplashScreen> {
     });
     Timer.periodic(Duration(seconds: 3), (timer) {
       timer.cancel();
-      final productRepository =
-          Provider.of<ProductRepository>(context, listen: false);
-      final homeRepository =
-          Provider.of<HomeRepository>(context, listen: false);
-      final localizationService = Provider.of<LocalizationService>(context, listen: false);
+      // final productRepository =
+      //     Provider.of<ProductRepository>(context, listen: false);
+      // final homeRepository =
+      //     Provider.of<HomeRepository>(context, listen: false);
+      // final localizationService =
+      //     Provider.of<LocalizationService>(context, listen: false);
 
-
-      productRepository.getProducts();
-      homeRepository.getHome(localizationService.locale);
+      // productRepository.getProducts();
+      // homeRepository.getHome(
+      //     context: context, locale: localizationService.locale);
       Navigator.of(context).pushAndRemoveUntil(
           MaterialPageRoute(builder: (context) => RootScreen()),
           (Route<dynamic> route) => false);

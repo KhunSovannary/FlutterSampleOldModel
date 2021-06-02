@@ -16,9 +16,10 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 
 class MapScreen extends StatefulWidget {
-  MapScreen({@required this.location});
+  MapScreen({@required this.location, @required this.popUpBack});
 
   final LocationModel location;
+  final bool popUpBack;
 
   @override
   _MapScreenState createState() => _MapScreenState();
@@ -85,7 +86,8 @@ class _MapScreenState extends State<MapScreen> {
         margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         height: MediaQuery.of(context).size.width * 0.1,
         child: ElevatedButton(
-            child: Text(AppLocalizations.of(context).select, style: TextStyle(fontSize: 16)),
+            child: Text(AppLocalizations.of(context).select,
+                style: TextStyle(fontSize: 16)),
             style: ButtonStyle(
                 foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
                 backgroundColor:
@@ -95,17 +97,21 @@ class _MapScreenState extends State<MapScreen> {
                         borderRadius: BorderRadius.circular(5),
                         side: BorderSide(color: Colors.orange)))),
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => CheckoutScreen(
-                        location: LocationModel(
-                            lat: widget.location.lat,
-                            lng: widget.location.lng,
-                            fullAddress: widget.location.fullAddress,
-                            addressLine: widget.location.addressLine),
-                        user: userModel)),
-              );
+              if (widget.popUpBack) {
+                Navigator.pop(context);
+              } else {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => CheckoutScreen(
+                          location: LocationModel(
+                              lat: widget.location.lat,
+                              lng: widget.location.lng,
+                              fullAddress: widget.location.fullAddress,
+                              addressLine: widget.location.addressLine),
+                          user: userModel)),
+                );
+              }
             }),
       ),
     );
