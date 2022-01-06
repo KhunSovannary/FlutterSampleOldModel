@@ -5,7 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 class App {
   // API
 //   static const apiBaseUrl = 'api.ganzberg.com';
-  static const apiBaseUrl = "gangos1.kasegro.com";
+  static const apiBaseUrl = "api.chabhuoy.online";
 
   static const login = '/api/login';
   static const logout = '/api/logout';

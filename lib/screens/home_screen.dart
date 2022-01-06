@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -55,67 +56,46 @@ class _HomeScreenState extends State<HomeScreen> {
           )
         : NotificationListener<ScrollNotification>(
             onNotification: (scrollNotification) {
-              // if (scrollNotification is ScrollStartNotification) {
-              //   _onStartScroll(scrollNotification.metrics);
-              // } else if (scrollNotification is ScrollUpdateNotification) {
-              //   _onUpdateScroll(scrollNotification.metrics);
-              // } else
-              if (scrollNotification is ScrollEndNotification) {
-                print(scrollNotification.);
-                // print(scrollNotification.)
-                // _onEndScroll(scrollNotification.metrics);
-              }
+              if (scrollNotification is ScrollEndNotification) {}
 
               return;
             },
             child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
                 child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                BannerWidget(banners: homeRepository.banners),
-                SizedBox(height: 10),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Text(AppLocalizations.of(context).category,
-                          style: TextStyle(
-                            color: Colors.green.shade800,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w600,
-                          )),
-                      SizedBox(height: 10),
-                      CategoryWidget(data: homeRepository.categories),
-                      Text(AppLocalizations.of(context).product,
-                          style: TextStyle(
-                            color: Colors.green.shade800,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w600,
-                          )),
-                      SizedBox(height: 20),
-                      ProductGridWidget(
-                          products: homeRepository.products,
-                          scrollController: _scrollController),
-                    ],
-                  ),
-                )
-              ],
-            )),
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    BannerWidget(banners: homeRepository.banners),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Text(AppLocalizations.of(context).category,
+                              style: TextStyle(
+                                color: Colors.green.shade800,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                              )),
+                          SizedBox(height: 10),
+                          CategoryWidget(data: homeRepository.categories),
+                          Text(AppLocalizations.of(context).product,
+                              style: TextStyle(
+                                color: Colors.green.shade800,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                              )),
+                          SizedBox(height: 20),
+                          ProductGridWidget(
+                              products: homeRepository.products,
+                              scrollController: _scrollController),
+                        ],
+                      ),
+                    )
+                  ],
+                )),
           );
-  }
-
-  _onStartScroll(ScrollMetrics metrics) {
-    // print("Scroll Start");
-  }
-
-  _onUpdateScroll(ScrollMetrics metrics) {
-    // print("Scroll Update");
-  }
-
-  _onEndScroll(ScrollMetrics metrics) {
-    print("Scroll End");
   }
 }

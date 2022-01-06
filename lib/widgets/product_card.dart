@@ -44,14 +44,15 @@ class ProductCard extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(fontSize: 15),
                       ),
-//                                  SizedBox(height: 5,),
-                      Text(
-                        '\$${product.unitPrice} / ${product.unitName}',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 16,
-                          color: Colors.red,
+                      Expanded(
+                        child: Text(
+                          '\$${product.unitPrice} / ${product.unitName}',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16,
+                            color: Colors.red,
+                          ),
                         ),
                       ),
                     ],
